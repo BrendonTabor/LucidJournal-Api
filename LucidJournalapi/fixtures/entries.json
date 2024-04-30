@@ -1,0 +1,93 @@
+[
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 1,
+      "fields": {
+        "title": "Morning Journal",
+        "description": "Reflecting on yesterday's events and today's plans.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 2,
+      "fields": {
+        "title": "Dream Diary",
+        "description": "Logged a vivid dream from last night.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 3,
+      "fields": {
+        "title": "Book Notes",
+        "description": "Notes on the book I'm currently reading.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 4,
+      "fields": {
+        "title": "Learning Spanish",
+        "description": "New words and phrases learned today.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 5,
+      "fields": {
+        "title": "Project Ideas",
+        "description": "Brainstorming project ideas for my new course.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 6,
+      "fields": {
+        "title": "Meditation Insights",
+        "description": "What I've learned from today's meditation session.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 7,
+      "fields": {
+        "title": "Gardening Log",
+        "description": "Record of today's gardening activities.",
+        "user": 1
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 8,
+      "fields": {
+        "title": "Workout Routine",
+        "description": "Details of today's workout session.",
+        "user": 2
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 9,
+      "fields": {
+        "title": "Travel Plans",
+        "description": "Planning my next trip to Japan.",
+        "user": 3
+      }
+    },
+    {
+      "model": "LucidJournalapi.entry",
+      "pk": 10,
+      "fields": {
+        "title": "Cooking Recipes",
+        "description": "Collected some new recipes to try this week.",
+        "user": 1
+      }
+    }
+  ]
+  
