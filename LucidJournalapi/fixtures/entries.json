@@ -3,90 +3,60 @@
       "model": "LucidJournalapi.entry",
       "pk": 1,
       "fields": {
-        "title": "Morning Journal",
-        "description": "Reflecting on yesterday's events and today's plans.",
-        "user": 1
+        "title": "Vivid Dream of Flying",
+        "description": "Dreamt of flying over a cityscape.",
+        "user": 1,
+        "date_recorded": "2024-04-10",
+        "wake_method": 1,
+        "rem_count": 1
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 2,
       "fields": {
-        "title": "Dream Diary",
-        "description": "Logged a vivid dream from last night.",
-        "user": 1
+        "title": "Adventure in the Mountains",
+        "description": "Climbing high mountains with friends in my dream.",
+        "user": 1,
+        "date_recorded": "2024-04-11",
+        "wake_method": 2,
+        "rem_count": 2
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 3,
       "fields": {
-        "title": "Book Notes",
-        "description": "Notes on the book I'm currently reading.",
-        "user": 1
+        "title": "Lost in Space",
+        "description": "Floating through space and touching stars.",
+        "user": 1,
+        "date_recorded": "2024-04-12",
+        "wake_method": 3,
+        "rem_count": 3
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 4,
       "fields": {
-        "title": "Learning Spanish",
-        "description": "New words and phrases learned today.",
-        "user": 1
+        "title": "Underwater Exploration",
+        "description": "Exploring the deep ocean and seeing colorful fish.",
+        "user": 2,
+        "date_recorded": "2024-04-13",
+        "wake_method": 1,
+        "rem_count": 3
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 5,
       "fields": {
-        "title": "Project Ideas",
-        "description": "Brainstorming project ideas for my new course.",
-        "user": 1
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 6,
-      "fields": {
-        "title": "Meditation Insights",
-        "description": "What I've learned from today's meditation session.",
-        "user": 1
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 7,
-      "fields": {
-        "title": "Gardening Log",
-        "description": "Record of today's gardening activities.",
-        "user": 1
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 8,
-      "fields": {
-        "title": "Workout Routine",
-        "description": "Details of today's workout session.",
-        "user": 2
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 9,
-      "fields": {
-        "title": "Travel Plans",
-        "description": "Planning my next trip to Japan.",
-        "user": 3
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 10,
-      "fields": {
-        "title": "Cooking Recipes",
-        "description": "Collected some new recipes to try this week.",
-        "user": 1
+        "title": "Jungle Safari",
+        "description": "A safari adventure with wild animals around.",
+        "user": 2,
+        "date_recorded": "2024-04-14",
+        "wake_method": 2,
+        "rem_count": 2
       }
     }
   ]

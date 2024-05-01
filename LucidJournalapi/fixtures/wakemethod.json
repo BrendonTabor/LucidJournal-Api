@@ -1,0 +1,24 @@
+[
+    {
+      "model": "LucidJournalapi.wakemethod",
+      "pk": 1,
+      "fields": {
+        "label": "Alarm Clock"
+      }
+    },
+    {
+      "model": "LucidJournalapi.wakemethod",
+      "pk": 2,
+      "fields": {
+        "label": "Natural"
+      }
+    },
+    {
+      "model": "LucidJournalapi.wakemethod",
+      "pk": 3,
+      "fields": {
+        "label": "Phone Call"
+      }
+    }
+  ]
+  

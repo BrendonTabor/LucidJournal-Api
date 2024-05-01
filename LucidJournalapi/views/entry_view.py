@@ -2,8 +2,9 @@ from django.http import HttpResponseServerError
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from LucidJournalapi.models import Entry
-from django.contrib.auth.models import User
+from LucidJournalapi.models import Entry, WakeMethod, RemCount, DreamFactors
+from django.contrib.auth.models import User, 
+
 
 
 class Entryview(ViewSet):
@@ -20,6 +21,9 @@ class Entryview(ViewSet):
         entry.title = request.data["title"]
         entry.description = request.data["description"]
         entry.user = user
+        entry.date_recorded = request.data["date_recorded"]
+        entry.wake_method = WakeMethod.objects.get(pk=request.date["wake_method"])
+        entry.rem_count = RemCount.objects.get(pk=request.data["rem_count"])
 
         try:
             entry.save()
@@ -87,11 +91,22 @@ class UserEntryserializer(serializers.ModelSerializer):
             "username",
         )
 
+class DreamFactorSerializer(serializers.ModelSerializer):
+    
+    class Meta:
+        model = DreamFactors
+        fields = (
+            "id",
+            "value",
+        )
 
 class EntrySerializer(serializers.ModelSerializer):
     """JSON Serializer"""
 
     user = UserEntryserializer(many=False)
+    dreamfactors = DreamFactorSerializer(many=True)
+    dateRecorded = serializers.DateField(source="date_recorded")
+    wakeMethod = WakeMethodSerializer(read_only=True)
 
     class Meta:
         model = Entry
@@ -99,5 +114,7 @@ class EntrySerializer(serializers.ModelSerializer):
             "id",
             "title",
             "description",
+            "dateRecorded",
             "user",
+            "dreamfactors"
         )

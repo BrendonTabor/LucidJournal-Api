@@ -1,0 +1,24 @@
+[
+    {
+      "model": "LucidJournalapi.remcount",
+      "pk": 1,
+      "fields": {
+        "cycles_completed": "3 Cycles"
+      }
+    },
+    {
+      "model": "LucidJournalapi.remcount",
+      "pk": 2,
+      "fields": {
+        "cycles_completed": "5 Cycles"
+      }
+    },
+    {
+      "model": "LucidJournalapi.remcount",
+      "pk": 3,
+      "fields": {
+        "cycles_completed": "7 Cycles"
+      }
+    }
+  ]
+  
