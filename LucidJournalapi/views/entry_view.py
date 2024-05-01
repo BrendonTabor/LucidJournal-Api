@@ -3,8 +3,7 @@ from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
 from LucidJournalapi.models import Entry, WakeMethod, RemCount, DreamFactors
-from django.contrib.auth.models import User, 
-
+from django.contrib.auth.models import User
 
 
 class Entryview(ViewSet):
@@ -76,7 +75,7 @@ class Entryview(ViewSet):
             return HttpResponseServerError(ex)
 
 
-class UserEntryserializer(serializers.ModelSerializer):
+class UserEntrySerializer(serializers.ModelSerializer):
 
     firstName = serializers.CharField(source="first_name")
     lastName = serializers.CharField(source="last_name")
@@ -91,22 +90,29 @@ class UserEntryserializer(serializers.ModelSerializer):
             "username",
         )
 
-class DreamFactorSerializer(serializers.ModelSerializer):
-    
+
+class WakeMethodSerializer(serializers.ModelSerializer):
     class Meta:
-        model = DreamFactors
+        model = WakeMethod
         fields = (
             "id",
-            "value",
+            "label",
         )
+
+
+class RemCountSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = RemCount
+        fields = ("id", "cycles_completed")
+
 
 class EntrySerializer(serializers.ModelSerializer):
     """JSON Serializer"""
 
-    user = UserEntryserializer(many=False)
-    dreamfactors = DreamFactorSerializer(many=True)
+    user = UserEntrySerializer(many=False)
     dateRecorded = serializers.DateField(source="date_recorded")
-    wakeMethod = WakeMethodSerializer(read_only=True)
+    wake_method = WakeMethodSerializer(many=False)
+    rem_count = RemCountSerializer(many=False)
 
     class Meta:
         model = Entry
@@ -116,5 +122,6 @@ class EntrySerializer(serializers.ModelSerializer):
             "description",
             "dateRecorded",
             "user",
-            "dreamfactors"
+            "wake_method",
+            "rem_count",
         )

@@ -3,20 +3,20 @@
       "model": "LucidJournalapi.entry",
       "pk": 1,
       "fields": {
-        "title": "Vivid Dream of Flying",
-        "description": "Dreamt of flying over a cityscape.",
+        "title": "Mysterious Forest",
+        "description": "Dreamt of wandering through an ancient, fog-covered forest.",
         "user": 1,
         "date_recorded": "2024-04-10",
         "wake_method": 1,
-        "rem_count": 1
+        "rem_count": 3
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 2,
       "fields": {
-        "title": "Adventure in the Mountains",
-        "description": "Climbing high mountains with friends in my dream.",
+        "title": "Ocean Depths",
+        "description": "Explored the depths of the ocean, discovering hidden treasures.",
         "user": 1,
         "date_recorded": "2024-04-11",
         "wake_method": 2,
@@ -27,36 +27,36 @@
       "model": "LucidJournalapi.entry",
       "pk": 3,
       "fields": {
-        "title": "Lost in Space",
-        "description": "Floating through space and touching stars.",
+        "title": "Space Odyssey",
+        "description": "Traveled through space to visit distant galaxies.",
         "user": 1,
         "date_recorded": "2024-04-12",
         "wake_method": 3,
-        "rem_count": 3
+        "rem_count": 1
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 4,
       "fields": {
-        "title": "Underwater Exploration",
-        "description": "Exploring the deep ocean and seeing colorful fish.",
+        "title": "Time Travel",
+        "description": "Went back in time to witness historical events firsthand.",
         "user": 2,
         "date_recorded": "2024-04-13",
         "wake_method": 1,
-        "rem_count": 3
+        "rem_count": 2
       }
     },
     {
       "model": "LucidJournalapi.entry",
       "pk": 5,
       "fields": {
-        "title": "Jungle Safari",
-        "description": "A safari adventure with wild animals around.",
+        "title": "Into the Jungle",
+        "description": "Encountered exotic animals and ancient ruins in a lush jungle.",
         "user": 2,
         "date_recorded": "2024-04-14",
         "wake_method": 2,
-        "rem_count": 2
+        "rem_count": 3
       }
     }
   ]
