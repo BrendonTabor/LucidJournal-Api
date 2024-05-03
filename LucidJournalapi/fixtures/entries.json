@@ -1,63 +1,62 @@
 [
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 1,
-      "fields": {
-        "title": "Mysterious Forest",
-        "description": "Dreamt of wandering through an ancient, fog-covered forest.",
-        "user": 1,
-        "date_recorded": "2024-04-10",
-        "wake_method": 1,
-        "rem_count": 3
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 2,
-      "fields": {
-        "title": "Ocean Depths",
-        "description": "Explored the depths of the ocean, discovering hidden treasures.",
-        "user": 1,
-        "date_recorded": "2024-04-11",
-        "wake_method": 2,
-        "rem_count": 2
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 3,
-      "fields": {
-        "title": "Space Odyssey",
-        "description": "Traveled through space to visit distant galaxies.",
-        "user": 1,
-        "date_recorded": "2024-04-12",
-        "wake_method": 3,
-        "rem_count": 1
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 4,
-      "fields": {
-        "title": "Time Travel",
-        "description": "Went back in time to witness historical events firsthand.",
-        "user": 2,
-        "date_recorded": "2024-04-13",
-        "wake_method": 1,
-        "rem_count": 2
-      }
-    },
-    {
-      "model": "LucidJournalapi.entry",
-      "pk": 5,
-      "fields": {
-        "title": "Into the Jungle",
-        "description": "Encountered exotic animals and ancient ruins in a lush jungle.",
-        "user": 2,
-        "date_recorded": "2024-04-14",
-        "wake_method": 2,
-        "rem_count": 3
-      }
+  {
+    "model": "LucidJournalapi.entry",
+    "pk": 1,
+    "fields": {
+      "title": "Vivid Dream",
+      "description": "I had a dream where I was flying over a beautiful landscape.",
+      "user": 1,
+      "date_recorded": "2023-05-01",
+      "wake_method": 1,
+      "rem_count": 1
     }
-  ]
-  
+  },
+  {
+    "model": "LucidJournalapi.entry",
+    "pk": 2,
+    "fields": {
+      "title": "Nightmare",
+      "description": "It was a terrifying dream about being chased by a monster.",
+      "user": 2,
+      "date_recorded": "2023-05-02",
+      "wake_method": 2,
+      "rem_count": 2
+    }
+  },
+  {
+    "model": "LucidJournalapi.entry",
+    "pk": 3,
+    "fields": {
+      "title": "Lucid Dream",
+      "description": "I was aware that I was dreaming and could control the dream environment.",
+      "user": 1,
+      "date_recorded": "2023-05-03",
+      "wake_method": 3,
+      "rem_count": 3
+    }
+  },
+  {
+    "model": "LucidJournalapi.entry",
+    "pk": 4,
+    "fields": {
+      "title": "Recurring Dream",
+      "description": "It was the same dream I've been having for weeks, where I'm lost in a maze.",
+      "user": 3,
+      "date_recorded": "2023-05-04",
+      "wake_method": 1,
+      "rem_count": 3
+    }
+  },
+  {
+    "model": "LucidJournalapi.entry",
+    "pk": 5,
+    "fields": {
+      "title": "Prophetic Dream",
+      "description": "I had a dream that seemed to predict a future event.",
+      "user": 2,
+      "date_recorded": "2023-05-05",
+      "wake_method": 1,
+      "rem_count": 2
+    }
+  }
+]

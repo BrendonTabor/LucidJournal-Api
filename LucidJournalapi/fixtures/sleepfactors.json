@@ -1,0 +1,72 @@
+[
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 1,
+    "fields": {
+      "label": "Interrupted Sleep"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 2,
+    "fields": {
+      "label": "Took Sleep Aids"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 3,
+    "fields": {
+      "label": "Drank Alcohol Before Bed"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 4,
+    "fields": {
+      "label": "Stressful Day"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 5,
+    "fields": {
+      "label": "Consumed Caffeine Late"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 6,
+    "fields": {
+      "label": "Heavy Dinner"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 7,
+    "fields": {
+      "label": "Physical Exercise Before Bed"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 8,
+    "fields": {
+      "label": "Used Electronic Devices in Bed"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 9,
+    "fields": {
+      "label": "Slept in a New Environment"
+    }
+  },
+  {
+    "model": "LucidJournalapi.sleepfactor",
+    "pk": 10,
+    "fields": {
+      "label": "Noise Disturbances"
+    }
+  }
+]

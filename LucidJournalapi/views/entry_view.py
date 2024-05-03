@@ -2,8 +2,9 @@ from django.http import HttpResponseServerError
 from rest_framework import serializers, status
 from rest_framework.response import Response
 from rest_framework.viewsets import ViewSet
-from LucidJournalapi.models import Entry, WakeMethod, RemCount, DreamFactors
+from LucidJournalapi.models import Entry, WakeMethod, RemCount, DreamFactor, SleepFactor
 from django.contrib.auth.models import User
+from LucidJournalapi.models.sleepfactor import SleepFactor
 
 
 class Entryview(ViewSet):
@@ -16,16 +17,21 @@ class Entryview(ViewSet):
         """
         user = request.auth.user
 
+        dreamfactors = []
+        for sleepfactors_id in request.data["dreamfactors"]:
+            sleepfactor = SleepFactor.objects.get(pk=sleepfactors_id)
+            dreamfactors.append(sleepfactor)
         entry = Entry()
         entry.title = request.data["title"]
         entry.description = request.data["description"]
         entry.user = user
         entry.date_recorded = request.data["date_recorded"]
-        entry.wake_method = WakeMethod.objects.get(pk=request.date["wake_method"])
+        entry.wake_method = WakeMethod.objects.get(pk=request.data["wake_method"])
         entry.rem_count = RemCount.objects.get(pk=request.data["rem_count"])
 
         try:
             entry.save()
+            entry.dreamfactors.set(dreamfactors)
             serializer = EntrySerializer(entry)
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
@@ -74,6 +80,50 @@ class Entryview(ViewSet):
         except Exception as ex:
             return HttpResponseServerError(ex)
 
+    def update(self, request, pk=None):
+        """Handle PUT requests for a single item
+
+        Returns:
+            Response -- JSON serialized instance
+        """
+        try:
+            entry = Entry.objects.get(pk=pk)
+            user = request.auth.user
+
+            dreamfactors = []
+            for sleepfactors_id in request.data["dreamfactors"]:
+                sleepfactor = SleepFactor.objects.get(pk=sleepfactors_id)
+                dreamfactors.append(sleepfactor)
+
+            entry = Entry.objects.get(pk=pk)
+            entry.title = request.data["title"]
+            entry.description = request.data["description"]
+            entry.user = user
+            entry.date_recorded = request.data["date_recorded"]
+            entry.wake_method = WakeMethod.objects.get(
+                pk=request.data["wake_method"]["id"]
+            )
+            entry.rem_count = RemCount.objects.get(pk=request.data["rem_count"]["id"])
+
+            try:
+                entry.save()
+                entry.dreamfactors.set(dreamfactors)
+                serializer = EntrySerializer(entry)
+                return Response(serializer.data, status=status.HTTP_200_OK)
+            except Exception as ex:
+                return Response(
+                    {"stupid mortal, malformed object dummy.": ex.args[0]},
+                    status=status.HTTP_400_BAD_REQUEST,
+                )
+
+        except Entry.DoesNotExist as ex:
+            return Response({"message": ex.args[0]}, status=status.HTTP_404_NOT_FOUND)
+
+        except Exception as ex:
+            return Response(
+                {"message": ex.args[0]}, status=status.HTTP_500_INTERNAL_SERVER_ERROR
+            )
+
 
 class UserEntrySerializer(serializers.ModelSerializer):
 
@@ -106,11 +156,22 @@ class RemCountSerializer(serializers.ModelSerializer):
         fields = ("id", "cycles_completed")
 
 
+class DreamFactorSerializer(serializers.ModelSerializer):
+    """JSON serializer"""
+
+    class Meta:
+        model = SleepFactor
+        fields = (
+            "id",
+            "label",
+        )
+
+
 class EntrySerializer(serializers.ModelSerializer):
     """JSON Serializer"""
 
     user = UserEntrySerializer(many=False)
-    dateRecorded = serializers.DateField(source="date_recorded")
+    dreamfactors = DreamFactorSerializer(many=True)
     wake_method = WakeMethodSerializer(many=False)
     rem_count = RemCountSerializer(many=False)
 
@@ -120,8 +181,9 @@ class EntrySerializer(serializers.ModelSerializer):
             "id",
             "title",
             "description",
-            "dateRecorded",
+            "date_recorded",
             "user",
             "wake_method",
             "rem_count",
+            "dreamfactors",
         )
