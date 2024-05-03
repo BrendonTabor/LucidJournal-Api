@@ -46,7 +46,7 @@ class Entryview(ViewSet):
             Response -- JSON serialized instance
         """
         try:
-            entry = Entry.objects.get(pk=pk)
+            entry = Entry.objects.get(pk=pk, user=request.user)
             serializer = EntrySerializer(entry)
             return Response(serializer.data)
         except Exception as ex:
@@ -58,7 +58,7 @@ class Entryview(ViewSet):
             Response -- 200, 404, or 500 status code
         """
         try:
-            entry = Entry.objects.get(pk=pk)
+            entry = Entry.objects.get(pk=pk, user=request.user)
             entry.delete()
             return Response(None, status=status.HTTP_204_NO_CONTENT)
         except Entry.DoesNotExist as ex:
@@ -74,7 +74,7 @@ class Entryview(ViewSet):
             Response -- JSON serialized array
         """
         try:
-            entry = Entry.objects.all()
+            entry = Entry.objects.filter(user=request.user)
             serializer = EntrySerializer(entry, many=True)
             return Response(serializer.data, status=status.HTTP_200_OK)
         except Exception as ex:
@@ -100,10 +100,8 @@ class Entryview(ViewSet):
             entry.description = request.data["description"]
             entry.user = user
             entry.date_recorded = request.data["date_recorded"]
-            entry.wake_method = WakeMethod.objects.get(
-                pk=request.data["wake_method"]["id"]
-            )
-            entry.rem_count = RemCount.objects.get(pk=request.data["rem_count"]["id"])
+            entry.wake_method = WakeMethod.objects.get(pk=request.data["wake_method"])
+            entry.rem_count = RemCount.objects.get(pk=request.data["rem_count"])
 
             try:
                 entry.save()
